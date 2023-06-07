@@ -4,4 +4,4 @@
 
 # About
 
-[0x00-shell_basics](./0x00-shell_basics) : Learning basic shell scripting to perform basic tasks
+[0x00-shell_basics](./0x00-shell_basics) : Learn basic bash scripting to perform basic tasks
