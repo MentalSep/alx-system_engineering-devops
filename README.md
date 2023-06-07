@@ -2,6 +2,6 @@
 	ALX System Engineering and DevOps
 </h1>
 
-# About
+# Projects
 
 [0x00-shell_basics](./0x00-shell_basics) : Learn basic bash scripting to perform basic tasks
