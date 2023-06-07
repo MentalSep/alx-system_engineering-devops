@@ -2,6 +2,6 @@
 	ALX System Engineering and DevOps
 </h1>
 
-# Projects
+## Projects
 
 [0x00-shell_basics](./0x00-shell_basics) : Introduction to bash scripting.
