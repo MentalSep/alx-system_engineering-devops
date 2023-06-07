@@ -4,4 +4,4 @@
 
 # Projects
 
-[0x00-shell_basics](./0x00-shell_basics) : Learn basic bash scripting to perform basic tasks
+[0x00-shell_basics](./0x00-shell_basics) : Introduction to bash scripting.
