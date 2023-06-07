@@ -1,2 +1,3 @@
-# alx-system_engineering-devops
-ALX System Engineering and DevOps
+<h1 align="center">
+	ALX System Engineering and DevOps
+</h1>
