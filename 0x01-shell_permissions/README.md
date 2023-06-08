@@ -9,7 +9,7 @@
 6. [Multiple permissions](./6-multiple_permissions) : a script that adds execute permission to the owner and the group owner, and read permission to other users, to the file `hello`.  
 7. [Everybody!](./7-everybody) : a script that adds execution permission to the owner, the group owner and the other users, to the file `hello`.  
 8. [James Bond](./8-James_Bond) : a script that sets the permission to the file hello as follows: no permissions got the owner and group and all permissions to other users.  
-9. [John Doe](./9-John_Doe) :a script that sets the mode of the file `hello` to this :  ***-rwxr-x-wx 1 julien julien 23 Sep 20 14:25 hello***  
+9. [John Doe](./9-John_Doe) : a script that sets the mode of the file `hello` to this :  ***-rwxr-x-wx 1 julien julien 23 Sep 20 14:25 hello***  
 10. [Look in the mirror](./10-mirror_permissions) : a script that sets the mode of the file `hello` the same as `olleh`’s mode.  
 11. [Directories](./11-directories_permissions) : script that adds execute permission to all subdirectories of the **current directory** for the owner, the group owner and all other users, regular files should not be changed.  
 12. [More directories](./12-directory_permissions) : a script that creates a directory called `my_dir` with permissions `751` in the working directory.  
