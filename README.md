@@ -1,2 +1,7 @@
-# alx-system_engineering-devops
-ALX System Engineering and DevOps
+<h1 align="center">
+	ALX System Engineering and DevOps
+</h1>
+
+## Projects
+
+[0x00-shell_basics](./0x00-shell_basics) : Introduction to bash scripting.
