@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays the content of the current directory in a list format
+names=$(ls)
+for file in $names; do echo "$file" | cut --delimiter='-' -f 2 ; done
