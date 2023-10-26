@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# display visitor IP and HTTP status cods from an Apache access log file in sorted and specific format
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr
