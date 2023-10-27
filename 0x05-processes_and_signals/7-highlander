@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bdisplays To infinity and beyond indefinitely and catches the SIGTERM signal
+trap 'echo "I am invincible!!!"' SIGTERM
+while true; do echo "To infinity and beyond"; sleep 2; done
