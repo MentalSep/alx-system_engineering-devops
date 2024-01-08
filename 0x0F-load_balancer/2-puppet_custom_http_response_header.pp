@@ -5,15 +5,14 @@ exec { 'apt-get update':
 }
 
 package { 'nginx':
-  ensure  => 'installed',
-  require => Exec['apt-get update'],
+  ensure => 'installed',
 }
 
 file_line { 'HTTP header':
   ensure => present,
-  path   => '/etc/nginx/sites-available/default',
+  path   => '/etc/nginx/sites-available/default'
   after  => 'listen 80 default_server;',
-  line   => 'add_header X-server-name $hostname;',
+  line   => 'add_header X-Served-By $hostname;',
 }
 
 service { 'nginx':
