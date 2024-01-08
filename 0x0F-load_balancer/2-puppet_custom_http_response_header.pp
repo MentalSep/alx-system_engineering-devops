@@ -8,8 +8,9 @@ package { 'nginx':
   ensure => 'installed',
 }
 
-file_line { '/etc/nginx/sites-available/default':
+file_line { 'HTTP header':
   ensure => present,
+  path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 default_server;',
   line   => 'add_header X-server-name $hostname;',
 }
