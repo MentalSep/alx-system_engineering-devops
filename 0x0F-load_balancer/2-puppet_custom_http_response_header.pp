@@ -1,18 +1,26 @@
 # configures the web serevr
 
 exec { 'update':
-  command => '/usr/bin/apt-get update',
+  command  => 'sudo apt-get update',
+  provider => 'shell',
+  before   => Package['install nginx']
 }
 
-package { 'nginx':
-  ensure => installed,
+package { 'install nginx':
+  command  => 'sudo apt-get install -y nginx',
+  provider => 'shell',
+  before   => file_line['HTTP header']
 }
 
-file { '/etc/nginx/conf.d/custom_header.conf':
-  ensure  => present,
-  content => 'add_header X-Served-By $http_header_value;',
+file_line { 'HTTP header':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen 80 default_server;',
+  line   => '        add_header X-Served-By $hostname;',
+  before => Service['nginx restart']
 }
 
-service { 'nginx':
-  ensure => running,
+service { 'nginx restart':
+  command  => 'sudo service nginx restart',
+  provider => 'shell',
 }
