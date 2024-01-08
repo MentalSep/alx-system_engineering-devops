@@ -5,8 +5,8 @@ exec { 'update':
 }
 
 package { 'nginx':
-  ensure  => present,
-  require => Exec['update']
+  ensure  => 'present',
+  require => 'apt'
 }
 
 file_line { 'HTTP header':
