@@ -16,7 +16,6 @@ file_line { 'HTTP header':
   line   => '        add_header X-Served-By $hostname;'
 }
 
-service { 'nginx':
-  ensure  => 'running',
-  require => Package['nginx']
+service { 'nginx restart':
+  command     => '/usr/sbin/service nginx restart',
 }
