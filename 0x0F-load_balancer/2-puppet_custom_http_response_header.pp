@@ -1,12 +1,13 @@
 # configures the web serevr
 
 exec { 'update':
-  command => '/usr/bin/apt-get update'
+  command  => 'apt-get update',
+  provider => 'shell',
 }
 
 package { 'nginx':
-  ensure  => 'present',
-  require => 'apt'
+  ensure   => present,
+  provider => 'apt'
 }
 
 file_line { 'HTTP header':
