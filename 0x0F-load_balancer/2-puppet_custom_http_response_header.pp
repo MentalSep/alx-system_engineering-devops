@@ -1,24 +1,33 @@
 # configures the web serevr
 
-exec { 'update':
-  command  => 'apt-get update',
-  user     => 'root',
+exec { 'nginx install':
+  command  => 'sudo apt-get update && sudo apt-get install -y nginx',
   provider => 'shell',
 }
 
-package { 'nginx':
-  ensure   => present,
-  provider => 'apt'
+file { '/etc/nginx/sites-available/default':
+  ensure  => file,
+  content => "server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+
+        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+
+        add_header X-Served-By \$hostname;
+
+}"
 }
 
-file_line { 'HTTP header':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => 'add_header X-Served-By $hostname;'
-}
-
-service { 'nginx':
-  ensure  => 'running',
-  require => Package['nginx']
+exec { 'service nginx restart':
+  provider => 'shell',
 }
