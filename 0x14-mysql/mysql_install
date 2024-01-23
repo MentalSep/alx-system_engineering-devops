@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# steps to intall mysql 5.7 on the webservers
+
+# Grab the key from https://dev.mysql.com/doc/refman/5.7/en/checking-gpg-signature.html and save to 'signature.key'
+sudo apt-key add signature.key
+
+# Add the repo
+sudo sh -c 'echo "deb http://repo.mysql.com/apt/ubuntu bionic mysql-5.7" >> /etc/apt/sources.list.d/mysql.list'
+
+sudo apt-get update
+
+# fix for the NO_PUBKEY error if encountered:
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBKEY> # grab the PUBKEY from the error message
+
+# check if the mysql 5.7 version is added
+sudo apt-cache policy mysql-server
+
+# install mysql 5.7
+sudo apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5.7*
