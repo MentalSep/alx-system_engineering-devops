@@ -6,7 +6,7 @@ import requests
 def top_ten(subreddit):
     """Returns the number of subscribers for a given subreddit"""
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
-    response = requests.get(url)
+    response = requests.get(url, allow_redirects=False)
     if response.status_code != 200:
         print(None)
     else:
