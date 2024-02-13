@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module wokring with Reddit API"""
+"""
+Module wokring with Reddit API
+"""
 import requests
 
 
