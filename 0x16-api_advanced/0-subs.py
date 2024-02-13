@@ -9,6 +9,7 @@ def number_of_subscribers(subreddit):
     """
     Returns the number of subscribers for a given subreddit
     """
+    BASE_URL = 'https://www.reddit.com'
     api_headers = {
         'Accept': 'application/json',
         'User-Agent': ' '.join([
