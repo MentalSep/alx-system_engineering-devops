@@ -1,5 +1,8 @@
 # Postmortem: Web Stack Outage on February 18, 2024
 
+<p align="center">
+<img src="image.png" width=100% height=100% />
+</p>
 ## Issue Summary
 
 **Duration:**  
