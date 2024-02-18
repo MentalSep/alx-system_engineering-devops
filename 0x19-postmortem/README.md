@@ -3,8 +3,8 @@
 ## Issue Summary
 
 **Duration:**  
-Start Time: February 18, 2024, 10:15 AM (UTC)  
-End Time: February 18, 2024, 1:45 PM (UTC)
+Start Time: February 18, 2024, 10:15 AM (GMT)  
+End Time: February 18, 2024, 1:45 PM (GMT)
 
 **Impact:**  
 The outage affected the core authentication service, leading to a complete denial of service for users attempting to log in. Approximately 30% of users experienced disruptions, resulting in login failures and delayed access to critical features.
