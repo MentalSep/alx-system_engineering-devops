@@ -6,6 +6,6 @@ exec { 'set_nginx_ulimit':
 }
 
 exec { 'nginx_restart':
-  command => 'systemctl restart nginx',
+  command => 'service nginx restart',
   path    => '/bin:/usr/bin',
 }
