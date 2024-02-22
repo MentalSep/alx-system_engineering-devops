@@ -1,0 +1,30 @@
+server {
+        listen 80 default_server;
+location /hbnb_static/ { alias /data/web_static/current/;}
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+
+        location /airbnb-onepage/ {
+                proxy_pass http://localhost:5000;
+        }
+
+        location /airbnb-dynamic/number_odd_or_even/{
+                proxy_pass http://localhost:5001/number_odd_or_even/;
+        }
+
+        rewrite ^/redirect_me https://www.github.com/MentalSep permanent;
+
+        error_page 404 /404.html;
+
+        add_header X-Served-By $hostname;
+
+}
