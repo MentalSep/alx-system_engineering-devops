@@ -1,11 +1,3 @@
-# script to fix the nginx configuration file
-exec { 'set_nginx_ulimit':
-  command   => 'sed -i \'s/^ULIMIT=.*/ULIMIT="-n 2000"/\' /etc/default/nginx',
-  path      => '/bin:/usr/bin',
-  subscribe => Exec['nginx_restart'],
-}
-
-exec { 'nginx_restart':
-  command => 'service nginx restart',
-  path    => '/bin:/usr/bin',
-}
+#script to fix the nginx configuration file
+exec { '/usr/bin/env sed -i s/15/1000/ /etc/default/nginx': }
+-> exec { '/usr/bin/env service nginx restart': }
